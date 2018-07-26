@@ -44,6 +44,6 @@ class Model(object):
     def save(self, file):
         self.model.save(file)
 
-    def load(self, file):
-        self.model = load_model(file)
+    def load(file):
+        return load_model(file)
 
