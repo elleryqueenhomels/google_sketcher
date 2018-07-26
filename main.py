@@ -18,10 +18,11 @@ def main():
 
     download_data(data_dir=DATA_DIR, labels_file=LABELS_FILE, base_url=BASE_URL)
 
-    model = train_model(DATA_DIR, os.path.join(MODEL_DIR, MODEL_FILE), CLASSES_FILE)
+    model_save_path = os.path.join(MODEL_DIR, MODEL_FILE)
+    classes_file_path = os.path.join(MODEL_DIR, CLASSES_FILE)
+    model = train_model(DATA_DIR, model_save_path, classes_file_path)
 
-    print('>>> All done! Model saved to <%s>' % 
-        os.path.join(MODEL_DIR, MODEL_FILE))
+    print('>>> All done! Model saved to <%s>' % model_save_path)
 
 
 if __name__ == '__main__':
