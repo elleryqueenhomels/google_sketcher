@@ -8,6 +8,7 @@ DATA_DIR = 'data'
 MODEL_DIR = 'model'
 MODEL_FILE = 'keras_model.h5'
 LABELS_FILE = 'categories.txt'
+CLASSES_FILE = 'class_names.txt'
 BASE_URL = 'https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/'
 
 
@@ -17,7 +18,7 @@ def main():
 
     download_data(data_dir=DATA_DIR, labels_file=LABELS_FILE, base_url=BASE_URL)
 
-    model = train_model(DATA_DIR, os.path.join(MODEL_DIR, MODEL_FILE))
+    model = train_model(DATA_DIR, os.path.join(MODEL_DIR, MODEL_FILE), CLASSES_FILE)
 
     print('>>> All done! Model saved to <%s>' % 
         os.path.join(MODEL_DIR, MODEL_FILE))

@@ -28,7 +28,7 @@ def convert_label(Y, num_labels):
     return Y
 
 
-def train_model(data_dir, save_path):
+def train_model(data_dir, save_path, classes_file):
     X_train, Y_train, X_test, Y_test, label_names = load_data(data_dir, 
         test_ratio=TEST_RATIO, items_limit_per_label=ITEMS_LIMIT_PER_LABEL)
 
@@ -46,6 +46,10 @@ def train_model(data_dir, save_path):
         validation_split=VALIDATION_SPLIT, verbose=VERBOSE)
 
     model.save(save_path)
+
+    with open(classes_file, 'w') as f:
+        for item in label_names:
+            f.write('%s\n' % item)
 
     train_score = model.score(X_train, Y_train)
     test_score = model.score(X_test, Y_test)
