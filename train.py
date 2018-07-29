@@ -8,7 +8,7 @@ from tensorflow import keras
 
 # for data loading
 TEST_RATIO = 0.1
-ITEMS_LIMIT_PER_LABEL = 50000
+ITEMS_LIMIT_PER_LABEL = 60000
 
 # for training
 EPOCHS = 10
