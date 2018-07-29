@@ -8,7 +8,7 @@ You can find a demo from [here](https://elleryqueenhomels.github.io/sketcher/).
 
 The trained CNN can take any doodle image as input, and "guess" what the doodle describes within [345 categories](https://github.com/elleryqueenhomels/google_sketcher/blob/master/categories.txt).
 
-- CNN Architecture:<br/>![cnn_architecture](https://user-images.githubusercontent.com/13844740/43363745-181276b2-933e-11e8-93b7-b10c5be85929.png)
+- CNN Architecture:<br/>![cnn_architecture](https://user-images.githubusercontent.com/13844740/43365984-2d96416a-9368-11e8-972b-d8ca1e40ef3b.png)
 
 - Manual:
 1. run `python3 main.py` - The script will automatically download training dataset, prerpocess data, build the CNN, train the CNN, and save the model.
