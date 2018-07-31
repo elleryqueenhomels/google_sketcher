@@ -17,7 +17,8 @@ The trained CNN can take any doodle image as input, and "guess" what the doodle 
 
 ## Trained Model
 - You can find my trained model in the `model` directory.
-- You can also download the trained model and the training log file in [AWS S3](https://s3.console.aws.amazon.com/s3/buckets/wengaoye/sketcher-model-v1/?region=us-west-2&tab=overview).
+- You can also download the trained model and the training log file in my AWS S3.<br/>
+[model_v1](https://s3.console.aws.amazon.com/s3/buckets/wengaoye/sketcher-model-v1/?region=us-west-2&tab=overview)<br/>[model_v2](https://s3.console.aws.amazon.com/s3/buckets/wengaoye/sketcher-model-v2/?region=us-west-2&tab=overview)
 
 ## My Running Environment
 <b>Hardware</b>
