@@ -1,14 +1,24 @@
+import argparse
 import os
 
 from train import train_model
 from utils import download_data
 
+parser = argparse.ArgumentParser()
 
-DATA_DIR = 'data'
-MODEL_DIR = 'model'
-MODEL_FILE = 'keras_model.h5'
-LABELS_FILE = 'categories.txt'
-CLASSES_FILE = 'class_names.txt'
+parser.add_argument("--data_dir", default="data", help="The training data directory")
+parser.add_argument("--model_dir", default="model", help="The output model directory")
+parser.add_argument("--model_file", default="keras_model.h5", help="The trained model file name")
+parser.add_argument("--labels_file", default="categories.txt", help="The labels file name")
+parser.add_argument("--classes_file", default="class_names.txt", help="The classes file name")
+
+args = parser.parse_args()
+
+DATA_DIR = parser.data_dir
+MODEL_DIR = parser.model_dir
+MODEL_FILE = parser.model_file
+LABELS_FILE = parser.labels_file
+CLASSES_FILE = parser.classes_file
 BASE_URL = 'https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/'
 
 
