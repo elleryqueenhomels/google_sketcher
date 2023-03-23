@@ -1,7 +1,9 @@
 import os
 import glob
-import urllib
 import numpy as np
+
+from urllib.request import urlopen
+from shutil import copyfileobj
 
 def download_data(data_dir, labels_file, base_url):
     if not os.path.exists(data_dir):
@@ -15,7 +17,9 @@ def download_data(data_dir, labels_file, base_url):
     for label in labels:
         lbl_url = label.replace('_', '%20')
         url = base_url + lbl_url + '.npy'
-        urllib.request.urlretrieve(url, os.path.join(data_dir, label + '.npy'))
+        download_path = os.path.join(data_dir, label + '.npy')
+        with urlopen(url) as in_stream, open(download_path, 'wb') as out_file:
+            copyfileobj(in_stream, out_file)
         print('Done: %s' % url)
 
 def load_data(data_dir, test_ratio=0.2, items_limit_per_label=None):
