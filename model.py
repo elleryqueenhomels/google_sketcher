@@ -34,7 +34,7 @@ class Model(object):
         return self.model.evaluate(X, Y, verbose=0)
 
     def predict_one(self, x):
-        x = np.expand_dims(x, axis=0)
+        x = tf.expand_dims(x, axis=0)
         pred = self.model.predict(x)[0]
         return pred
 
