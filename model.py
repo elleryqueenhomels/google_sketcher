@@ -4,7 +4,6 @@ import tensorflow as tf
 from keras import layers
 from keras.models import load_model
 
-
 class Model(object):
     def __init__(self, input_shape, output_labels_size):
         model = keras.Sequential()
@@ -46,4 +45,3 @@ class Model(object):
 
     def load(file):
         return load_model(file)
-

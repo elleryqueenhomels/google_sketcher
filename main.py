@@ -21,7 +21,6 @@ LABELS_FILE = parser.labels_file
 CLASSES_FILE = parser.classes_file
 BASE_URL = 'https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/'
 
-
 def main():
     if not os.path.exists(MODEL_DIR):
         os.mkdir(MODEL_DIR)
@@ -34,7 +33,5 @@ def main():
 
     print('>>> All done! Model saved to <%s>' % model_save_path)
 
-
 if __name__ == '__main__':
     main()
-

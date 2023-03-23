@@ -3,8 +3,6 @@ import tensorflow as tf
 
 from model import Model
 from utils import load_data
-from tensorflow import keras
-
 
 # for data loading
 TEST_RATIO = 0.1
@@ -16,17 +14,14 @@ VERBOSE = 2
 BATCH_SIZE = 256
 VALIDATION_SPLIT = 0.1
 
-
 def preprocess_data(X, img_size):
     X = X.reshape(X.shape[0], img_size, img_size, 1)
     X /= 255.0
     return X.astype(np.float32)
 
-
 def convert_label(Y, num_labels):
-    Y = keras.utils.to_categorical(Y, num_labels)
+    Y = tf.keras.utils.to_categorical(Y, num_labels)
     return Y
-
 
 def train_model(data_dir, save_path, classes_file):
     X_train, Y_train, X_test, Y_test, label_names = load_data(data_dir, 
@@ -58,4 +53,3 @@ def train_model(data_dir, save_path, classes_file):
     print('Test accuracy: %.2f%%' % (test_score[1] * 100))
 
     return model
-

@@ -3,7 +3,6 @@ import glob
 import urllib
 import numpy as np
 
-
 def download_data(data_dir, labels_file, base_url):
     if not os.path.exists(data_dir):
         os.mkdir(data_dir)
@@ -18,7 +17,6 @@ def download_data(data_dir, labels_file, base_url):
         url = base_url + lbl_url + '.npy'
         urllib.request.urlretrieve(url, os.path.join(data_dir, label + '.npy'))
         print('Done: %s' % url)
-
 
 def load_data(data_dir, test_ratio=0.2, items_limit_per_label=None):
     all_files = glob.glob(os.path.join(data_dir, '*.npy'))
@@ -105,7 +103,6 @@ def process_and_save_data(data_src_dir, data_save_dir, classes_save_path, items_
 
     print('>>> All done! In load_process_save_data()')
 
-
 def load_processed_data(data_save_dir, classes_save_path, test_ratio=0.2, items_limit_per_label=None):
     # load data
     X = np.load(os.path.join(data_save_dir, 'X_limit_%s.npy' % items_limit_per_label))
@@ -127,6 +124,3 @@ def load_processed_data(data_save_dir, classes_save_path, test_ratio=0.2, items_
     Y_train = Y[test_size:]
 
     return X_train, Y_train, X_test, Y_test, label_names
-
-
-
